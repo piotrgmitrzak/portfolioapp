@@ -12,17 +12,17 @@ function Navbar({ scrollToSection, aboutRef, offerRef, howItWorksRef, opinionsRe
     };
 
     const navLinks = [
-        { label: "O mnie", ref: aboutRef },
-        { label: "Oferta", ref: offerRef },
-        { label: "Jak to działa?", ref: howItWorksRef },
-        { label: "Opinie", ref: opinionsRef },
-        { label: "Kontakt", ref: contactRef },
+        { label: "O mnie 👋", ref: aboutRef },
+        { label: "Oferta 📚", ref: offerRef },
+        { label: "Jak to działa? ❓", ref: howItWorksRef },
+        { label: "Opinie ⭐", ref: opinionsRef },
+        { label: "Kontakt 📧", ref: contactRef },
     ];
 
     return (
         <motion.nav
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="fixed top-0 left-0 w-full h-20 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 shadow-xl flex items-center justify-between px-10 z-50 font-poppins"
         >
