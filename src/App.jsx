@@ -12,7 +12,10 @@ function App()
 
   const scrollToSection = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
   return(
+    <>
     <Navbar scrollToSection={scrollToSection} aboutRef={aboutRef} offerRef={offerRef} howItWorksRef={howItWorksRef} opinionsRef={opinionsRef} contactRef={contactRef}/>
+    <Person scrollToSection={scrollToSection} contactRef={contactRef}/>
+    </>
   );
 }
 
