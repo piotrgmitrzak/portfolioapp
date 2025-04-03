@@ -1,7 +1,8 @@
-import Navbar from "./components/Navbar";
-import Person from "./components/Person";
-import About from "./components/About";
 import { useRef } from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import { useScrollTo } from "./useScrollTo";
 
 function App() {
   const aboutRef = useRef(null);
@@ -10,7 +11,15 @@ function App() {
   const opinionsRef = useRef(null);
   const contactRef = useRef(null);
 
-  const scrollToSection = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (ref) => {
+    const navbarHeight = 77;
+    const offset = ref.current.offsetTop - navbarHeight;
+    window.scrollTo({
+        top: offset,
+        behavior: 'smooth',
+    });
+}
+
 
   return (
     <>
@@ -22,9 +31,11 @@ function App() {
         opinionsRef={opinionsRef} 
         contactRef={contactRef} 
       />
-      <Person offerRef={offerRef} />
+      <Home 
+        scrollToSection={scrollToSection} 
+        aboutRef={aboutRef} 
+      />
       <About aboutRef={aboutRef} />
-      
     </>
   );
 }
