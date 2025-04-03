@@ -1,5 +1,5 @@
 .animated-gradient {
-    background: linear-gradient(135deg, #d2e8f4, #A0B9E0, #7BAAD2, #5C92C4);
+    background: linear-gradient(135deg, #A0E5D8, #7ACFC6, #56B8A7, #3E9C8E);
     background-size: 300% 300%;
     animation: gradientMove 12s ease infinite;
     position: relative;
@@ -10,6 +10,7 @@
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
 .wave-animation {
     animation: waveFloat 6s ease-in-out infinite;
 }
@@ -18,4 +19,28 @@
     0% { transform: translateY(0); }
     50% { transform: translateY(8px); }
     100% { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .about-image {
+    transform: translateY(0) translateX(0) scale(1);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .about-image {
+    transform: translateY(-100px) translateX(50px) scale(0.85);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-text {
+    text-align: left;
+  }
 }

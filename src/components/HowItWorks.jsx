@@ -46,7 +46,7 @@ function HowItWorks({ howItWorksRef, scrollToSection, offerRef }) {
             <div className="flex justify-center">
                 <motion.button
                     whileHover={{ scale: 1.05 }}
-                    className="bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 text-white px-8 py-4 rounded-2xl hover:brightness-110 transition shadow-lg"
+                    className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 py-3 rounded-2xl shadow-lg hover:brightness-110 transition w-fit self-start"
                     onClick={() => scrollToSection(offerRef)}
                 >
                      Sprawdź ofertę 📋

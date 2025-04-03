@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
-function Offer({ offerRef, scrollToSection, opinionsRef }) {
+function Offer({ offerRef, opinionsRef, scrollToSection }) {
     const offers = [
         {
             title: "Indywidualne zajęcia",
@@ -23,7 +23,7 @@ function Offer({ offerRef, scrollToSection, opinionsRef }) {
     return (
         <motion.section
             ref={offerRef}
-            className="relative py-24 px-8 bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-200 rounded-2xl overflow-hidden"
+            className="relative py-24 px-8 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 rounded-2xl overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -40,7 +40,7 @@ function Offer({ offerRef, scrollToSection, opinionsRef }) {
                 </svg>
             </div>
 
-            <h2 className="text-4xl font-semibold mb-12 text-purple-700 text-center drop-shadow-sm">Oferta</h2>
+            <h2 className="text-4xl font-semibold mb-12 text-indigo-700 text-center drop-shadow-sm">Oferta</h2>
             <div className="flex flex-col gap-8 max-w-3xl mx-auto mb-12">
                 {offers.map((offer, i) => (
                     <motion.div
@@ -48,25 +48,26 @@ function Offer({ offerRef, scrollToSection, opinionsRef }) {
                         className="flex items-start gap-4 bg-white/50 backdrop-blur-md p-4 rounded-xl hover:scale-[1.02] transition-transform"
                         whileHover={{ x: 5 }}
                     >
-                        <CheckCircle className="text-purple-600 w-8 h-8 mt-1" />
+                        <CheckCircle className="text-indigo-600 w-8 h-8 mt-1" />
                         <div>
-                            <h3 className="text-2xl font-bold text-purple-700 mb-1">{offer.title}</h3>
+                            <h3 className="text-2xl font-bold text-indigo-600 mb-1">{offer.title}</h3>
                             <p className="text-gray-700">{offer.description}</p>
-                            <p className="text-purple-600 font-semibold mt-1">{offer.price}</p>
+                            <p className="text-indigo-600 font-semibold mt-1">{offer.price}</p>
                         </div>
                     </motion.div>
                 ))}
             </div>
             <div className="flex justify-center">
-            <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500 text-white px-8 py-4 rounded-2xl hover:brightness-110 transition shadow-lg"
-                onClick={() => scrollToSection(opinionsRef)}
-            >
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 py-3 rounded-2xl shadow-lg hover:brightness-110 transition w-fit self-start"
+                    onClick={() => scrollToSection(opinionsRef)}
+                >
                     🗣️ Zobacz opinie 🙌
                 </motion.button>
             </div>
         </motion.section>
     );
 }
+
 export default Offer;
