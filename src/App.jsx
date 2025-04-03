@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar"
+import Person from "./components/Person"
 import { useRef } from "react";
 
 function App()
