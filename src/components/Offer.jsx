@@ -23,7 +23,7 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
     return (
         <motion.section
             ref={offerRef}
-            className="relative py-24 px-8 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 rounded-2xl overflow-hidden"
+            className="relative py-24 px-8 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 rounded-t-2xl overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}

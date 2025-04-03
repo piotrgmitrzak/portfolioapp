@@ -4,49 +4,64 @@ function PrivacyPolicy() {
             <h1 className="text-3xl font-bold mb-6">Polityka prywatności</h1>
 
             <p className="mb-4">
-                Niniejsza Polityka Prywatności określa zasady przetwarzania danych osobowych przez Piotra Gmitrzaka w związku z
-                prowadzeniem strony internetowej i świadczeniem usług językowych online.
+                Niniejsza Polityka Prywatności określa zasady przetwarzania danych osobowych przez Piotra Gmitrzaka w związku z prowadzeniem strony internetowej i świadczeniem usług językowych online.
             </p>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">1. Administrator danych osobowych</h2>
             <p className="mb-4">
                 Administratorem danych jest Piotr Gmitrzak, prowadzący działalność edukacyjną w zakresie treningu językowego.
-                Kontakt: <a href="mailto:piotrgmitrzak@gmail.pl" className="underline">piotrgmitrzak@gmail.pl</a>
+                Kontakt: <a href="mailto:piotrgmitrzak@gmail.pl" className="underline">piotrgmitrzak@gmail.pl</a>.
+                Administrator nie wyznaczył inspektora ochrony danych.
             </p>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">2. Zakres i cel zbierania danych</h2>
             <ul className="list-disc pl-6 mb-4">
-                <li>Imię i adres e-mail – w celu odpowiedzi na zapytanie przesłane przez formularz kontaktowy.</li>
-                <li>Dane techniczne (adres IP, przeglądarka) – w celach analitycznych, jeśli używane są narzędzia typu Google Analytics.</li>
+                <li>Imię, nazwisko, adres e-mail i numer telefonu – w celu realizacji zapisów, kontaktu oraz świadczenia usług językowych online.</li>
+                <li>Dane rozliczeniowe (adres, NIP) – w celu wystawienia faktur i spełnienia obowiązków podatkowych.</li>
+                <li>Dane techniczne (adres IP, przeglądarka) – w celach analitycznych i poprawy działania strony, jeśli używane są narzędzia takie jak Google Analytics.</li>
             </ul>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">3. Podstawy prawne przetwarzania danych</h2>
-            <p className="mb-4">
-                Dane są przetwarzane na podstawie art. 6 ust. 1 lit. a (zgoda) oraz f (prawnie uzasadniony interes administratora) RODO.
-            </p>
+            <ul className="list-disc pl-6 mb-4">
+                <li>Art. 6 ust. 1 lit. a RODO – zgoda użytkownika (np. kontakt przez formularz).</li>
+                <li>Art. 6 ust. 1 lit. b RODO – wykonanie umowy (np. zapis na zajęcia).</li>
+                <li>Art. 6 ust. 1 lit. c RODO – obowiązki prawne (np. podatkowe).</li>
+                <li>Art. 6 ust. 1 lit. f RODO – uzasadniony interes administratora (np. analiza ruchu na stronie).</li>
+            </ul>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">4. Czas przechowywania danych</h2>
-            <p className="mb-4">
-                Dane są przechowywane przez okres niezbędny do realizacji celu, w którym zostały zebrane, lub do momentu wycofania zgody.
-            </p>
+            <ul className="list-disc pl-6 mb-4">
+                <li>Dane kontaktowe – do czasu zakończenia korespondencji lub wycofania zgody.</li>
+                <li>Dane usługowe i rozliczeniowe – przez czas trwania współpracy oraz do 6 lat po jej zakończeniu (w celach podatkowych).</li>
+                <li>Dane analityczne – zgodnie z polityką narzędzi takich jak Google Analytics.</li>
+            </ul>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">5. Prawa użytkownika</h2>
             <ul className="list-disc pl-6 mb-4">
-                <li>Prawo dostępu do danych</li>
-                <li>Prawo do ich sprostowania</li>
-                <li>Usunięcia lub ograniczenia przetwarzania</li>
-                <li>Wycofania zgody</li>
-                <li>Wniesienia skargi do Prezesa UODO</li>
+                <li>Prawo dostępu do swoich danych.</li>
+                <li>Prawo do ich sprostowania, usunięcia lub ograniczenia przetwarzania.</li>
+                <li>Prawo do przenoszenia danych.</li>
+                <li>Prawo do wycofania zgody w dowolnym momencie.</li>
+                <li>Prawo do wniesienia sprzeciwu wobec przetwarzania danych.</li>
+                <li>Prawo do wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
             </ul>
+            <p className="mb-4">
+                W celu realizacji swoich praw, użytkownik może skontaktować się z administratorem za pośrednictwem adresu e-mail podanego w punkcie 1.
+            </p>
 
             <h2 className="text-xl font-semibold mt-6 mb-2">6. Pliki cookies</h2>
             <p className="mb-4">
-                Strona może wykorzystywać pliki cookies w celu poprawy działania i analizowania ruchu. Użytkownik może zarządzać cookies w ustawieniach przeglądarki.
+                Strona może wykorzystywać pliki cookies w celu prawidłowego działania oraz analizy statystyk odwiedzin. Użytkownik może zarządzać cookies w ustawieniach swojej przeglądarki. Strona może również korzystać z narzędzi analitycznych takich jak Google Analytics, które mogą zbierać dane techniczne (np. adres IP, informacje o urządzeniu).
             </p>
 
-            <h2 className="text-xl font-semibold mt-6 mb-2">7. Zmiany w polityce</h2>
+            <h2 className="text-xl font-semibold mt-6 mb-2">7. Odbiorcy danych</h2>
             <p className="mb-4">
-                Polityka prywatności może być okresowo aktualizowana. Wszelkie zmiany będą publikowane na tej stronie.
+                Dane osobowe mogą być przekazywane zaufanym podmiotom przetwarzającym dane w imieniu Administratora, takim jak dostawcy usług IT, hostingu, poczty elektronicznej, platformy płatności lub platformy do spotkań online (np. Zoom, Google Meet) – wyłącznie w zakresie niezbędnym do realizacji usług. Wszystkie te podmioty są zobowiązane do zapewnienia odpowiednich środków ochrony danych.
+            </p>
+
+            <h2 className="text-xl font-semibold mt-6 mb-2">8. Zmiany w polityce prywatności</h2>
+            <p className="mb-4">
+                Polityka prywatności może być okresowo aktualizowana. Nowa wersja będzie publikowana na tej stronie. W przypadku istotnych zmian użytkownicy mogą zostać poinformowani dodatkowo e-mailem lub poprzez komunikat na stronie.
             </p>
 
             <p className="text-sm text-gray-600 mt-10">Data ostatniej aktualizacji: {new Date().toLocaleDateString()}</p>

@@ -13,7 +13,7 @@ function Navbar({ scrollToSection, aboutRef, offerRef, howItWorksRef, opinionsRe
 
     const navLinks = [
         { label: "O mnie 👋", ref: aboutRef },
-        { label: "Na czym polegają zajęcia? ❓", ref: howItWorksRef },
+        { label: "Na czym polegają zajęcia ❓", ref: howItWorksRef },
         { label: "Oferta 📚", ref: offerRef },
         { label: "Opinie ⭐", ref: opinionsRef },
         { label: "Kontakt ☎️", ref: contactRef },

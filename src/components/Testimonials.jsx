@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
 const opinions = [
-    { name: "Aleksandra Nowak", job: "HR Manager", avatar: "https://randomuser.me/api/portraits/women/11.jpg", text: "Piotr to świetny trener! Lekcje są zawsze dynamiczne i dobrze przemyślane." },
+    { name: "Monika Wakuła", job: "Piękne PHUDU", avatar: "https://randomuser.me/api/portraits/women/11.jpg", text: "Piotr to świetny trener! Lekcje są zawsze dynamiczne i dobrze przemyślane." },
     { name: "Michał Kamiński", job: "Frontend Developer", avatar: "https://randomuser.me/api/portraits/men/12.jpg", text: "Dzięki Piotrowi w końcu przestałem bać się mówić po angielsku!" },
     { name: "Karolina Dąbrowska", job: "Studentka Filologii Angielskiej", avatar: "https://randomuser.me/api/portraits/women/13.jpg", text: "Rewelacyjne podejście do ucznia i ogrom cierpliwości. Polecam!" },
     { name: "Grzegorz Wójcik", job: "Marketing Specialist", avatar: "https://randomuser.me/api/portraits/men/14.jpg", text: "Piotr ma ogromną wiedzę i potrafi ją przekazać w prosty sposób." },
