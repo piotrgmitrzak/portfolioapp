@@ -34,7 +34,7 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
                     className="bg-gradient-to-r from-yellow-200 via-pink-300 to-purple-400 text-white px-8 py-4 rounded-2xl hover:brightness-110 transition shadow-lg"
                     onClick={() => scrollToSection(aboutRef)}
                 >
-                    🤔 Zaciekawiony? Lecimy dalej ⬇️
+                    👀 Poznaj mnie bliżej ⬇️
                 </motion.button>
             </div>
         </motion.section>

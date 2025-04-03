@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import personWithCat from "../assets/476657017_987129602998403_6825080812416126678_n-removebg-preview.png";
 import "../About.css";
 
-function About({ aboutRef }) {
+function About({ aboutRef, howItWorksRef, scrollToSection}) {
   return (
     <motion.section
       ref={aboutRef}
@@ -37,6 +37,7 @@ function About({ aboutRef }) {
             <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="bg-gradient-to-r from-green-300 via-blue-300 to-indigo-400 text-white px-6 py-3 rounded-2xl shadow-lg hover:brightness-110 transition w-fit self-start"
+                onClick={() => scrollToSection(howItWorksRef)}
             >
                 Jak wyglądają zajęcia? 💬
             </motion.button>
