@@ -48,9 +48,7 @@ function Contact({ contactRef }) {
         <div className="w-full max-w-4xl px-6 space-y-8">
           <h2 className="text-4xl font-semibold mb-6 text-indigo-700">Kontakt</h2>
           <p className="text-lg text-gray-700 mb-4">Jeśli jesteś zainteresowany(-a), napisz!</p>
-
           {error && <p className="text-red-500">{error}</p>}
-
           <form
             ref={formRef}
             onSubmit={sendEmail}
@@ -114,9 +112,8 @@ function Contact({ contactRef }) {
             </button>
           </form>
         </div>
-
         <div className="w-full max-w-4xl px-6 space-y-8 mt-12">
-          <h3 className="text-3xl font-semibold text-indigo-600">Dane Kontaktowe</h3> {/* Powiększono czcionkę */}
+          <h3 className="text-3xl font-semibold text-indigo-600">Dane Kontaktowe</h3>
           <p className="text-lg text-gray-700">📞 Tel: 123-456-789</p>
           <p className="text-lg text-gray-700">📧 Email: kontakt@example.com</p>
           <p className="text-lg text-gray-700">
@@ -132,7 +129,6 @@ function Contact({ contactRef }) {
           </p>
         </div>
       </motion.section>
-
       <AnimatePresence>
         {showOverlay && (
           <motion.div
@@ -144,13 +140,13 @@ function Contact({ contactRef }) {
           >
             <div className="max-w-lg mx-auto">
               <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 120 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
                 className="text-green-400 mb-6"
               >
                 <svg
-                  className="w-24 h-24 mx-auto"
+                  className="w-16 h-16 mx-auto"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -167,7 +163,7 @@ function Contact({ contactRef }) {
                 className="text-3xl font-semibold text-white"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.6 }}
               >
                 Wiadomość wysłana!
               </motion.h3>
@@ -179,5 +175,4 @@ function Contact({ contactRef }) {
     </>
   );
 }
-
 export default Contact;
