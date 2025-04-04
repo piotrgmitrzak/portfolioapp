@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
+import "../offer.css";
 
 function Contact({ contactRef }) {
   const formRef = useRef();
@@ -20,7 +21,7 @@ function Contact({ contactRef }) {
         "Vya7kSvlmI5yh0ixq"
       )
       .then(
-        (result) => {
+        () => {
           setShowOverlay(true);
           setSent(true);
           formRef.current.reset();
@@ -29,7 +30,7 @@ function Contact({ contactRef }) {
             setSent(false);
           }, 4000);
         },
-        (error) => {
+        () => {
           setError("Wystąpił błąd podczas wysyłania wiadomości.");
         }
       );
@@ -39,7 +40,7 @@ function Contact({ contactRef }) {
     <>
       <motion.section
         ref={contactRef}
-        className="w-full min-h-screen py-24 px-0 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 flex flex-col items-center space-y-12"
+        className="w-full min-h-screen py-24 px-0 offer-gradient flex flex-col items-center space-y-12"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -113,7 +114,7 @@ function Contact({ contactRef }) {
           </form>
         </div>
         <div className="w-full max-w-4xl px-6 space-y-8 mt-12">
-          <h3 className="text-3xl font-semibold text-indigo-600">Dane Kontaktowe</h3>
+          <h3 className="text-3xl font-semibold text-indigo-700">Dane Kontaktowe</h3>
           <p className="text-lg text-gray-700">📞 Tel: 123-456-789</p>
           <p className="text-lg text-gray-700">📧 Email: kontakt@example.com</p>
           <p className="text-lg text-gray-700">
@@ -175,4 +176,5 @@ function Contact({ contactRef }) {
     </>
   );
 }
+
 export default Contact;
