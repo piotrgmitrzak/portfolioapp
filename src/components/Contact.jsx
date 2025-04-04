@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
+import confetti from "canvas-confetti";
 import "../offer.css";
 
 function Contact({ contactRef }) {
@@ -8,6 +9,40 @@ function Contact({ contactRef }) {
   const [sent, setSent] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const [error, setError] = useState(null);
+
+  const launchConfetti = () => {
+    const duration = 2000;
+    const animationEnd = Date.now() + duration;
+  
+    const colors = ["#bb0000", "#ffffff", "#00bb00", "#0000bb", "#fbbf24", "#ec4899"];
+  
+    const interval = setInterval(() => {
+      const timeLeft = animationEnd - Date.now();
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+  
+      const particleCount = 20;
+  
+      confetti({
+        particleCount,
+        origin: { x: 0, y: Math.random() },
+        angle: 60,
+        spread: 80,
+        startVelocity: 45,
+        colors,
+      });
+  
+      confetti({
+        particleCount,
+        origin: { x: 1, y: Math.random() },
+        angle: 120,
+        spread: 80,
+        startVelocity: 45,
+        colors,
+      });
+    }, 200);
+  };  
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -24,6 +59,7 @@ function Contact({ contactRef }) {
         () => {
           setShowOverlay(true);
           setSent(true);
+          launchConfetti();
           formRef.current.reset();
           setTimeout(() => {
             setShowOverlay(false);
@@ -115,17 +151,17 @@ function Contact({ contactRef }) {
         </div>
         <div className="w-full max-w-4xl px-6 space-y-8 mt-12">
           <h3 className="text-3xl font-semibold text-indigo-700">Dane Kontaktowe</h3>
-          <p className="text-lg text-gray-700">📞 Tel: 123-456-789</p>
-          <p className="text-lg text-gray-700">📧 Email: kontakt@example.com</p>
+          <p className="text-lg text-gray-700">📞 Tel: 531-904-909</p>
+          <p className="text-lg text-gray-700">📧 Email: piotr.gmitrzak@gmail.com</p>
           <p className="text-lg text-gray-700">
             🌍 Platforma Edukacyjna:{" "}
             <a
-              href="https://www.google.com"
+              href="https://www.studentcampus.pl"
               className="text-indigo-700 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              www.platforma.edu
+              www.studentcampus.pl
             </a>
           </p>
         </div>

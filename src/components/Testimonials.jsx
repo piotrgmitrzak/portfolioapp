@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const opinions = [
-    { name: "Jakub Kotkiewicz", job: "Frontend Developer", avatar: "https://randomuser.me/api/portraits/men/12.jpg", text: "Dzięki Piotrowi w końcu przestałem bać się mówić po angielsku!" },
+    { name: "Bubu Dudu", job: "Frontend Developer", avatar: "https://dudububushop.com/cdn/shop/articles/desktop-wallpaper-bubu-dudu-star-bubu-dudu.jpg?v=1729041097", text: "Dzięki Piotrowi w końcu przestałem bać się mówić po angielsku!" },
     { name: "Ewa Wachowicz", job: "1969-2023 RIP [*]", avatar: "https://i.iplsc.com/-/000HNJ9F5CBIMNF6-C461-F4.jpg", text: "Piotr to świetny trener! Lekcje są zawsze dynamiczne i dobrze przemyślane." },
     { name: "Marcin Kurcewicz", job: "Studentka Filologii Angielskiej", avatar: "https://randomuser.me/api/portraits/women/13.jpg", text: "Rewelacyjne podejście do ucznia i ogrom cierpliwości. Polecam!" },
     { name: "Schabu 13", job: "Marketing Specialist", avatar: "https://randomuser.me/api/portraits/men/14.jpg", text: "Piotr ma ogromną wiedzę i potrafi ją przekazać w prosty sposób." },

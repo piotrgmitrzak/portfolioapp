@@ -33,14 +33,13 @@ function About({ aboutRef, howItWorksRef, scrollToSection }) {
         </div>
           <div className="flex flex-col text-center md:text-left items-center md:items-start max-w-xl">
             <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-6 sm:leading-7 md:leading-8">
-              Cześć! Nazywam się EMEK i jestem pasjonatką nauki języków, kotów i dobrej kawy.
-              Od kilku lat pomagam innym w nauce angielskiego w sposób przyjazny i praktyczny.
-              Na co dzień tworzę materiały edukacyjne, uczę online i staram się, aby każda lekcja
-              była nie tylko skuteczna, ale i przyjemna.
+           <strong>Cześć! Nazywam się Piotrek i uczę, jak uczyć się skutecznie. </strong>
+            Od kilku lat prowadzę intensywne kursy językowe dla młodzieży i dorosłych. Moja pasja do nauczania zaczęła się w momencie, gdy sam przekonałem się, że można zrobić ogromny postęp w krótkim czasie – o ile zrezygnuje się ze szkolnych metod. Zrozumiałem, jak kluczowy jest codzienny kontakt z językiem, praktyka zamiast teorii i systematyczna praca oparta na realnych celach.
+            Na co dzień pomagam moim kursantom przełamywać bariery w mówieniu, budować nawyk regularnej nauki i wreszcie zacząć używać języka swobodnie i z pewnością siebie.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className="mt-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition w-fit self-center md:self-start text-sm sm:text-base"
+              className="mt-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition w-fit ml-4 md:ml-40 text-sm sm:text-base"
               onClick={() => scrollToSection(howItWorksRef)}
             >
               Jak wyglądają zajęcia? 💬

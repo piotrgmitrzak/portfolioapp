@@ -87,7 +87,7 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
                     className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 py-3 rounded-2xl shadow-lg hover:brightness-110 transition w-fit self-start"
                     onClick={() => scrollToSection(opinionsRef)}
                 >
-                    🗣️ Zobacz opinie 🙌
+                     Zobacz opinie 🙌
                 </motion.button>
             </div>
         </motion.section>

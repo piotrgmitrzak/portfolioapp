@@ -1,64 +1,93 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 function Home({ scrollToSection, aboutRef, contactRef }) {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <motion.section
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-10 pt-24 gap-6 sm:gap-8 bg-cover bg-center"
-      style={{ backgroundPositionY: "50%" }}
+      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-100 via-white to-pink-100 flex items-center justify-center px-4"
     >
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-700 leading-snug sm:leading-snug md:leading-tight mb-4 sm:mb-6"
-      >
-        <div className="flex items-center justify-center">
-          <span>🎓</span>
-          <span className="ml-2">Poczuj się pewnie w rozmowie po angielsku!</span>
-          <span className="ml-2">✨</span>
+      {/* Efekt paralaksy */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(99,102,241,0.1), transparent 80%)`,
+        }}
+      />
+
+      <div className="z-10 max-w-5xl text-center flex flex-col items-center gap-10">
+        <motion.h1
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-indigo-700 leading-tight drop-shadow-lg"
+        >
+          Twój osobisty <br />
+          <span className="bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text">
+            Trening Językowy
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="text-gray-700 text-lg sm:text-xl max-w-2xl leading-relaxed"
+        >
+          Prowadzę intensywne kursy językowe dla młodzieży szkół średnich i osób dorosłych, nastawione na praktyczne użycie języka w <strong>codziennych sytuacjach</strong>. 
+          Koncentrujemy się na rozwijaniu płynności w mówieniu, budowaniu dyscypliny w nauce oraz kształtowaniu nawyku systematycznej pracy. U nas liczy się rozmowa, zaangażowanie i realny postęp.
+        </motion.p>
+
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="bg-indigo-600 text-white px-6 py-3 rounded-2xl shadow-xl hover:brightness-110 transition text-base sm:text-lg"
+            onClick={() => scrollToSection(contactRef)}
+          >
+            Zapisz się teraz ✍️
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-2xl shadow-sm hover:bg-indigo-50 transition text-base sm:text-lg"
+            onClick={() => scrollToSection(aboutRef)}
+          >
+            Poznaj mnie bliżej 🤝
+          </motion.button>
         </div>
-      </motion.h2>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.7 }}
-        className="text-lg sm:text-xl max-w-2xl text-gray-700 leading-relaxed sm:leading-relaxed mb-4 sm:mb-6"
-      >
-        👋 Cześć! Nazywam się <strong>Piotr Gmitrzak</strong> i pomagam uczniom osiągać ich cele językowe w przyjaznej atmosferze 😊.<br />
-        🖥️ Uczę online przez <strong>Skype</strong> lub <strong>Discord</strong>, zapewniam wsparcie na platformie edukacyjnej 🗂️ i skupiam się na praktycznym użyciu języka. 📚
-      </motion.p>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.9 }}
-        className="text-md sm:text-lg max-w-xl text-gray-700 leading-relaxed sm:leading-relaxed"
-      >
-        ✅ Indywidualne podejście <br />
-        ✅ Przyjazna atmosfera <br />
-        ✅ Skuteczne przygotowanie do egzaminów, pracy i podróży ✈️
-      </motion.p>
-
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-6">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl hover:brightness-105 transition shadow-lg text-sm sm:text-base"
-          onClick={() => scrollToSection(contactRef)}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="bg-white/80 border border-indigo-200 rounded-xl px-4 py-3 text-sm sm:text-base text-gray-800 shadow-md backdrop-blur-sm"
         >
-          ✍️ Zapisz się już teraz! 📞
-        </motion.button>
-
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl hover:brightness-105 transition shadow-lg text-sm sm:text-base"
-          onClick={() => scrollToSection(aboutRef)}
+          ❗ Pierwsza lekcja bez ryzyka: <strong>nie pasuje? Oddaję Ci pieniądze!</strong>
+        </motion.div>
+      </div>
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
+        <svg
+          className="relative block w-[calc(100%+1.3px)] h-[100px]"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
         >
-          👀 Poznaj mnie bliżej ⬇️
-        </motion.button>
+          <path
+            d="M0,0 C360,80 1080,0 1440,60 L1440,100 L0,100 Z"
+            fill="#7dd3fc"
+          />
+        </svg>
       </div>
     </motion.section>
   );

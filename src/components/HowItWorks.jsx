@@ -6,22 +6,22 @@ function HowItWorks({ howItWorksRef, scrollToSection, offerRef }) {
     const methods = [
         {
             title: "Komunikacja",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor sit amet, consectetur adipiscing ipsum dolor sit amet, consectetur adipiscing...",
+            description: "Spotykamy się raz w tygodniu na platformie Google Meet lub Teams. Zajęcia odbywają się zdalnie, dzięki czemu oszczędzasz czas na dojazdach i możesz uczyć się w komfortowych warunkach. Zajęcia w pełni po angielsku od pierwszych zajęć.",
             icon: <FontAwesomeIcon icon={faVolumeUp} className="h-8 w-8 text-indigo-600 mb-4" />
         },
         {
             title: "Gramatyka w praktyce",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor sit amet, consectetur adipiscing ipsum dolor sit amet, consectetur adipiscing...",
+            description: "Nie korzystamy z podręczników ani szkolnych metod, nie uczymy się gramatyki „na zapas”. Zasady pojawiają się wtedy, wynikają bezpośrednio z rozmowy. Jeśli widzę, że potrzebujesz konkretnej struktury, omawiamy ją od razu i od razu ćwiczymy w praktyce.",
             icon: <FontAwesomeIcon icon={faBookOpen} className="h-8 w-8 text-indigo-600 mb-4" />
         },
         {
             title: "Personalizacja",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor sit amet, consectetur adipiscing ipsum dolor sit amet, consectetur adipiscing...",
+            description: "Każdy uczestnik ma dostęp do indywidualnego konta na platformie, gdzie praca domowa jest rozłożona na każdy dzień tygodnia. Słownictwo i zagadnienia gramatyczne są dobierane na podstawie tematów poruszanych na zajęciach. Uczysz się tego, czego faktycznie potrzebujesz.",
             icon: <FontAwesomeIcon icon={faUser} className="h-8 w-8 text-indigo-600 mb-4" />
         },
         {
             title: "Motywacja i wsparcie",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor sit amet, consectetur adipiscing ipsum dolor sit amet, consectetur adipiscing...",
+            description: "W kursie kluczową rolę odgrywa konsekwencja. Stały rytm pracy oraz jasno określone cele sprawiają, że uczysz się regularnie i bez przestojów. Dzięki przemyślanemu systemowi nauki zauważasz realne efekty w krótkim czasie.",
             icon: <FontAwesomeIcon icon={faHandsHelping} className="h-8 w-8 text-indigo-600 mb-4" />
         }
     ];

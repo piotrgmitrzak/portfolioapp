@@ -43,3 +43,6 @@ img.hover-optimized {
   transform-style: preserve-3d;
   will-change: transform;
 }
+.svg-gradient-fill {
+  fill: url(#animatedWaveGradient);
+}
