@@ -200,7 +200,7 @@ function Contact({ contactRef }) {
               >
                 Wiadomość wysłana!
               </motion.h3>
-              <p className="text-lg text-gray-300 mt-2">Dziękujemy za kontakt 😊</p>
+              <p className="text-lg text-gray-300 mt-2">Dziękuję za kontakt 😊</p>
             </div>
           </motion.div>
         )}

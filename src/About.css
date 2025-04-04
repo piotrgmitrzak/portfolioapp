@@ -1,46 +1,45 @@
 .animated-gradient {
-    background: linear-gradient(135deg, #A0E5D8, #7ACFC6, #56B8A7, #3E9C8E);
-    background-size: 300% 300%;
-    animation: gradientMove 12s ease infinite;
-    position: relative;
+  background: linear-gradient(135deg, #A0E5D8, #7ACFC6, #56B8A7, #3E9C8E);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  position: relative;
+  border-radius: 0;           
+  overflow: hidden; 
+  -webkit-mask-image: none; 
+  mask-image: none;
 }
 
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
 .wave-animation {
-    animation: waveFloat 6s ease-in-out infinite;
+  animation: waveFloat 6s ease-in-out infinite;
 }
-
 @keyframes waveFloat {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
-    100% { transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  .about-image {
-    transform: translateY(0) translateX(0) scale(1);
-    max-width: 100%;
-    height: auto;
+  0% {
+    transform: translateY(0);
   }
-
-  .about-text {
-    text-align: center;
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
-
-@media (min-width: 769px) {
-  .about-image {
-    transform: translateY(-100px) translateX(50px) scale(0.85);
-    max-width: 100%;
-    height: auto;
-  }
-
-  .about-text {
-    text-align: left;
-  }
+.perspective-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+img.hover-optimized {
+  image-rendering: auto;
+  transform-style: preserve-3d;
+  will-change: transform;
 }

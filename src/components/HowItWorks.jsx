@@ -30,7 +30,7 @@ function HowItWorks({ howItWorksRef, scrollToSection, offerRef }) {
             viewport={{ once: true }}
         >
             <div ref={howItWorksRef} className="relative -top-40"></div>
-            <h2 className="text-4xl font-semibold mb-12 text-indigo-700 text-center">Jak wyglądają zajęcia?</h2>
+            <h2 className="text-5xl font-semibold mb-12 text-indigo-700 text-center">Jak wyglądają zajęcia?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 {methods.map((method, i) => (
                     <motion.div

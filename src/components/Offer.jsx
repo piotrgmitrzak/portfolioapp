@@ -22,14 +22,14 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
 
     return (
         <motion.section
-            ref={offerRef}
-            className="relative py-24 px-8 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 rounded-t-2xl overflow-hidden"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
+          ref={offerRef}
+          className="relative py-24 px-8 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 overflow-hidden"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
-            <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
+            <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180 -mt-[1px]">
                 <svg
                     className="wave-animation relative block w-[calc(100%+1.3px)] h-[100px]"
                     xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
                 </svg>
             </div>
 
-            <h2 className="text-4xl font-semibold mb-12 text-indigo-700 text-center drop-shadow-sm">Oferta</h2>
+            <h2 className="text-5xl font-semibold mb-12 text-indigo-700 text-center drop-shadow-sm">Oferta</h2>
             <div className="flex flex-col gap-8 max-w-3xl mx-auto mb-12">
                 {offers.map((offer, i) => (
                     <motion.div
