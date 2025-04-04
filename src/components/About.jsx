@@ -13,7 +13,7 @@ function About({ aboutRef, howItWorksRef, scrollToSection }) {
       viewport={{ once: true }}
     >
       <div className="max-w-5xl w-full mx-auto relative z-10">
-        <h2 className="text-5xl sm:text-4xl md:text-6xl font-extrabold mb-6 text-indigo-700 text-center">
+        <h2 className="text-5xl sm:text-4xl md:text-6xl font-extrabold mb-6 text-[#2C3E50] text-center">
           O mnie 🧑‍🏫
         </h2>
         <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-10">

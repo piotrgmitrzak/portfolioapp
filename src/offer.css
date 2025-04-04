@@ -1,0 +1,18 @@
+@keyframes gradient-x {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .offer-gradient {
+    background-image: linear-gradient(135deg, #B0E2F9, #A0D3F2, #7BBFEA, #529FD6);
+    background-size: 400% 400%;
+    animation: gradient-x 12s ease infinite;
+  }
+  

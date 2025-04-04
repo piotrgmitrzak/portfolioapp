@@ -1,5 +1,5 @@
 .animated-gradient {
-  background: linear-gradient(135deg, #A0E5D8, #7ACFC6, #56B8A7, #3E9C8E);
+  background: linear-gradient(135deg, #B0E2F9, #A0D3F2, #7BBFEA, #529FD6);
   background-size: 300% 300%;
   animation: gradientMove 12s ease infinite;
   position: relative;

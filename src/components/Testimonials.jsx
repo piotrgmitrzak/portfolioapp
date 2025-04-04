@@ -24,7 +24,7 @@ function Testimonials({ opinionsRef, contactRef, scrollToSection }) {
             className="py-24 px-8 relative overflow-hidden bg-white"
         >
             <motion.h2
-                className="text-4xl font-semibold mb-12 text-indigo-700 text-center relative z-10"
+                className="text-5xl font-semibold mb-12 text-indigo-700 text-center relative z-10"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5 }}
