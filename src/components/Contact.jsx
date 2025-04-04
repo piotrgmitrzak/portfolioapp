@@ -57,7 +57,7 @@ function Contact({ contactRef }) {
             <div className="flex flex-col space-y-4 w-full">
               <div className="w-full">
                 <label className="text-gray-700">
-                  Imię <span className="text-red-500">*</span>
+                  Imię i nazwisko<span className="text-red-500">*</span>
                 </label>
                 <input
                   name="name"
