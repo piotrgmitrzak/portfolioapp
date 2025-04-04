@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react"; 
+import { motion, AnimatePresence } from "framer-motion"; 
 import { Menu, X } from "lucide-react";
 
 function Navbar({
@@ -50,17 +50,19 @@ function Navbar({
 
       if (activeIndex !== -1) {
         setActiveSection(navLinks[activeIndex].label);
+      } else {
+        setActiveSection(null);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navLinks]);
 
   return (
     <>
       <div
-        className="fixed top-0 left-0 h-1 bg-white z-[60] transition-all duration-200"
+        className="fixed top-0 left-0 h-1 bg-gray-500 z-[60] transition-all duration-200"
         style={{ width: `${scrollProgress}%` }}
       />
       <motion.nav
@@ -163,7 +165,9 @@ function Navbar({
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`text-lg font-medium text-white transition text-left focus:outline-none inline-flex items-center space-x-2 ${
-                    activeSection === link.label ? "text-yellow-200" : "hover:text-yellow-200"
+                    activeSection === link.label
+                      ? "text-yellow-200"
+                      : "hover:text-yellow-200"
                   }`}
                 >
                   <span>{link.label}</span>

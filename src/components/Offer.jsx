@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
 
 function Offer({ offerRef, opinionsRef, scrollToSection }) {
     const offers = [
@@ -46,9 +45,11 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
                     <motion.div
                         key={i}
                         className="flex items-start gap-4 bg-white/50 backdrop-blur-md p-4 rounded-xl hover:scale-[1.02] transition-transform"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: i * 0.2 }}
                         whileHover={{ x: 5 }}
                     >
-                        <CheckCircle className="text-indigo-600 w-8 h-8 mt-1" />
                         <div>
                             <h3 className="text-2xl font-bold text-indigo-600 mb-1">{offer.title}</h3>
                             <p className="text-gray-700">{offer.description}</p>
@@ -59,7 +60,11 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
             </div>
             <div className="flex justify-center">
                 <motion.button
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{
+                        scale: 1.05,
+                        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
                     className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 py-3 rounded-2xl shadow-lg hover:brightness-110 transition w-fit self-start"
                     onClick={() => scrollToSection(opinionsRef)}
                 >
