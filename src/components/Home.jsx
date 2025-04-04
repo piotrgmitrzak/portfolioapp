@@ -13,9 +13,13 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="text-4xl sm:text-5xl md:text-6xl font-bold text-indigo-700 leading-snug sm:leading-snug md:leading-tight mb-4 sm:mb-6"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-700 leading-snug sm:leading-snug md:leading-tight mb-4 sm:mb-6"
       >
-        🎓 Poczuj się pewnie w rozmowie po angielsku! ✨
+        <div className="flex items-center justify-center">
+          <span>🎓</span>
+          <span className="ml-2">Poczuj się pewnie w rozmowie po angielsku!</span>
+          <span className="ml-2">✨</span>
+        </div>
       </motion.h2>
 
       <motion.p

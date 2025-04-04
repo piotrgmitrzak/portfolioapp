@@ -23,7 +23,14 @@ function Testimonials({ opinionsRef, contactRef, scrollToSection }) {
             ref={opinionsRef}
             className="py-24 px-8 relative overflow-hidden bg-white"
         >
-            <h2 className="text-4xl font-semibold mb-12 text-indigo-700 text-center relative z-10">Opinie kursantów</h2>
+            <motion.h2
+                className="text-4xl font-semibold mb-12 text-indigo-700 text-center relative z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5 }}
+            >
+                Opinie kursantów
+            </motion.h2>
 
             <div className="relative w-full overflow-hidden z-10">
                 <motion.div
@@ -34,16 +41,22 @@ function Testimonials({ opinionsRef, contactRef, scrollToSection }) {
                     {[...opinions, ...opinions].map((opinion, i) => (
                         <motion.div
                             key={i}
-                            className="min-w-[280px] max-w-[280px] bg-[#FFFCF2] rounded-2xl p-6 shadow-md flex flex-col items-center gap-3"
+                            className={`min-w-[280px] max-w-[280px] bg-[#FFFCF2] rounded-2xl p-6 shadow-md flex flex-col items-center gap-3 ${i === 0 ? 'border-4 border-indigo-600' : ''}`}
                             style={{
                                 paddingBottom: "40px",
                                 marginBottom: "15px",
                             }}
+                            whileHover={{ scale: 1.05 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
                         >
-                            <img
+                            <motion.img
                                 src={opinion.avatar}
                                 alt={opinion.name}
                                 className="w-16 h-16 rounded-full object-cover border-2 border-white shadow"
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
                             />
                             <h3 className="text-md font-semibold text-indigo-600">{opinion.name}</h3>
                             <p className="text-sm text-gray-700">{opinion.job}</p>
@@ -52,15 +65,21 @@ function Testimonials({ opinionsRef, contactRef, scrollToSection }) {
                     ))}
                 </motion.div>
             </div>
-            <div className="flex justify-center mt-8">
+
+            <motion.div
+                className="flex justify-center mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
+            >
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 py-3 rounded-2xl shadow-lg hover:brightness-110 transition"
                     onClick={() => scrollToSection(contactRef)}
                 >
-                   😎 Czekam na Twoją wiadomość! 📩
+                    😎 Czekam na Twoją wiadomość! 📩
                 </motion.button>
-            </div>
+            </motion.div>
         </section>
     );
 }

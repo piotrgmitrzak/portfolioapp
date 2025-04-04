@@ -1,21 +1,31 @@
 import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 
 function Offer({ offerRef, opinionsRef, scrollToSection }) {
     const offers = [
         {
             title: "Indywidualne zajęcia",
             description: "Zajęcia 1:1 dostosowane w 100% do Twoich potrzeb. Mówienie, gramatyka i słownictwo w praktyce.",
-            price: "od 120 zł / 60 min"
+            price: "od 120 zł / 60 min",
+            icon: (
+                <CheckCircle className="w-8 h-8 text-indigo-600" />
+            )
         },
         {
             title: "Zajęcia w parach",
             description: "Świetna opcja dla znajomych, par lub współpracowników. Uczysz się i motywujesz razem.",
-            price: "od 80 zł / osoba / 60 min"
+            price: "od 80 zł / osoba / 60 min",
+            icon: (
+                <CheckCircle className="w-8 h-8 text-indigo-600" />
+            )
         },
         {
             title: "Kurs intensywny",
             description: "Dla osób, które potrzebują szybkiego postępu. Idealny przed wyjazdem, egzaminem lub awansem.",
-            price: "od 100 zł / 60 min"
+            price: "od 100 zł / 60 min",
+            icon: (
+                <CheckCircle className="w-8 h-8 text-indigo-600" />
+            )
         }
     ];
 
@@ -25,7 +35,7 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
           className="relative py-24 px-8 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
             <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] rotate-180 -mt-[1px]">
@@ -44,12 +54,21 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
                 {offers.map((offer, i) => (
                     <motion.div
                         key={i}
-                        className="flex items-start gap-4 bg-white/50 backdrop-blur-md p-4 rounded-xl hover:scale-[1.02] transition-transform"
+                        className="flex items-start gap-6 bg-white p-6 rounded-xl shadow-lg hover:scale-[1.05] transition-transform"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: i * 0.2 }}
-                        whileHover={{ x: 5 }}
+                        transition={{ duration: 0.4, delay: i * 0.05 }}
+                        whileHover={{
+                            scale: 1.1,
+                            backgroundColor: "rgba(255, 255, 255, 0.9)",
+                            boxShadow: "0 15px 40px rgba(0, 0, 0, 0.15)",
+                            transition: { duration: 0.3 }
+                        }}
                     >
+                        {/* Usunięte tło za ikoną */}
+                        <div className="flex items-center justify-center">
+                            {offer.icon}
+                        </div>
                         <div>
                             <h3 className="text-2xl font-bold text-indigo-600 mb-1">{offer.title}</h3>
                             <p className="text-gray-700">{offer.description}</p>
@@ -61,8 +80,8 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
             <div className="flex justify-center">
                 <motion.button
                     whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.15)"
+                        scale: 1.1,
+                        boxShadow: "0 5px 20px rgba(0, 0, 0, 0.15)"
                     }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-6 py-3 rounded-2xl shadow-lg hover:brightness-110 transition w-fit self-start"

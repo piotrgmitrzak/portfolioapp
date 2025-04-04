@@ -18,7 +18,7 @@ body, #root {
 
 .parallax-background {
   animation: parallax 10s linear infinite;
-  background: url('path-to-image.jpg');
+  background: url('path-to-image.jpg') no-repeat center center;
   background-size: 300% 300%;
   position: absolute;
   top: 0;
@@ -26,10 +26,6 @@ body, #root {
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-.wave-animation {
-  animation: waveAnimation 4s ease infinite;
 }
 
 @keyframes waveAnimation {
@@ -41,5 +37,26 @@ body, #root {
   }
   100% {
     transform: translateX(0);
+  }
+}
+.wave-animation {
+  animation: waveAnimation 4s ease-in-out infinite;
+}
+
+.bg-gradient-moving {
+  background: linear-gradient(-45deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

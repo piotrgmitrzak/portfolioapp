@@ -1,15 +1,16 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function Contact({ contactRef }) {
   const formRef = useRef();
   const [sent, setSent] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  const [error, setError] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setError(null);
 
     emailjs
       .sendForm(
@@ -20,7 +21,6 @@ function Contact({ contactRef }) {
       )
       .then(
         (result) => {
-          console.log("Email sent", result.text);
           setShowOverlay(true);
           setSent(true);
           formRef.current.reset();
@@ -30,8 +30,7 @@ function Contact({ contactRef }) {
           }, 4000);
         },
         (error) => {
-          console.error("Error sending email:", error.text);
-          alert("Wystąpił błąd podczas wysyłania wiadomości.");
+          setError("Wystąpił błąd podczas wysyłania wiadomości.");
         }
       );
   };
@@ -40,25 +39,25 @@ function Contact({ contactRef }) {
     <>
       <motion.section
         ref={contactRef}
-        className="w-full min-h-screen py-24 px-0 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 flex flex-wrap lg:flex-nowrap justify-between space-x-0 lg:space-x-16"
+        className="w-full min-h-screen py-24 px-0 bg-gradient-to-r from-teal-300 via-teal-400 to-teal-500 flex flex-col items-center space-y-12"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <div className="w-full max-w-[800px] ml-0 sm:ml-auto px-6 lg:pl-48 xl:pl-64 space-y-8">
+        <div className="w-full max-w-4xl px-6 space-y-8">
           <h2 className="text-4xl font-semibold mb-6 text-indigo-700">Kontakt</h2>
-          <p className="text-lg text-gray-700 mb-4">
-            Jeśli jesteś zainteresowany(-a), napisz!
-          </p>
+          <p className="text-lg text-gray-700 mb-4">Jeśli jesteś zainteresowany(-a), napisz!</p>
+
+          {error && <p className="text-red-500">{error}</p>}
 
           <form
             ref={formRef}
             onSubmit={sendEmail}
-            className="space-y-4 bg-white p-6 rounded-lg shadow-md"
+            className="space-y-4 bg-white p-6 rounded-lg shadow-md w-full"
           >
-            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-              <div className="w-full sm:w-1/2">
+            <div className="flex flex-col space-y-4 w-full">
+              <div className="w-full">
                 <label className="text-gray-700">
                   Imię <span className="text-red-500">*</span>
                 </label>
@@ -66,58 +65,46 @@ function Contact({ contactRef }) {
                   name="name"
                   type="text"
                   placeholder="Wpisz swoje imię"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   required
                 />
               </div>
-              <div className="w-full sm:w-1/2">
+              <div className="w-full">
                 <label className="text-gray-700">
-                  Nazwisko <span className="text-red-500">*</span>
+                  E-mail <span className="text-red-500">*</span>
                 </label>
                 <input
-                  name="surname"
-                  type="text"
-                  placeholder="Wpisz swoje nazwisko"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  name="email"
+                  type="email"
+                  placeholder="Wpisz swój e-mail"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   required
                 />
               </div>
-            </div>
-            <div>
-              <label className="text-gray-700">
-                E-mail <span className="text-red-500">*</span>
-              </label>
-              <input
-                name="email"
-                type="email"
-                placeholder="Wpisz swój e-mail"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                required
-              />
-            </div>
-            <div>
-              <label className="text-gray-700">
-                Temat <span className="text-red-500">*</span>
-              </label>
-              <input
-                name="subject"
-                type="text"
-                placeholder="Podaj temat"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                required
-              />
-            </div>
-            <div>
-              <label className="text-gray-700">
-                Twoja wiadomość <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                name="message"
-                placeholder="Wpisz swoją wiadomość"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                rows="4"
-                required
-              />
+              <div className="w-full">
+                <label className="text-gray-700">
+                  Temat <span className="text-red-500">*</span>
+                </label>
+                <input
+                  name="subject"
+                  type="text"
+                  placeholder="Podaj temat"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  required
+                />
+              </div>
+              <div className="w-full">
+                <label className="text-gray-700">
+                  Twoja wiadomość <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="Wpisz swoją wiadomość"
+                  className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  rows="3"
+                  required
+                />
+              </div>
             </div>
             <button
               type="submit"
@@ -127,12 +114,13 @@ function Contact({ contactRef }) {
             </button>
           </form>
         </div>
-        <div className="w-full lg:w-1/2 mt-12 lg:mt-0 px-6 space-y-8">
-          <h3 className="text-2xl font-semibold text-indigo-600">Dane Kontaktowe</h3>
+
+        <div className="w-full max-w-4xl px-6 space-y-8 mt-12">
+          <h3 className="text-3xl font-semibold text-indigo-600">Dane Kontaktowe</h3> {/* Powiększono czcionkę */}
           <p className="text-lg text-gray-700">📞 Tel: 123-456-789</p>
           <p className="text-lg text-gray-700">📧 Email: kontakt@example.com</p>
           <p className="text-lg text-gray-700">
-            🌐 Platforma Edukacyjna:{" "}
+            🌍 Platforma Edukacyjna:{" "}
             <a
               href="https://www.google.com"
               className="text-indigo-700 hover:underline"
@@ -142,26 +130,9 @@ function Contact({ contactRef }) {
               www.platforma.edu
             </a>
           </p>
-
-          <div className="mt-6">
-            <h4 className="text-xl font-semibold text-indigo-600">Social Media</h4>
-            <div className="flex justify-start space-x-6 mt-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={35} className="text-blue-600 hover:text-blue-500" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={35} className="text-pink-500 hover:text-pink-400" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={35} className="text-blue-700 hover:text-blue-600" />
-              </a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={35} className="text-blue-500 hover:text-blue-400" />
-              </a>
-            </div>
-          </div>
         </div>
       </motion.section>
+
       <AnimatePresence>
         {showOverlay && (
           <motion.div

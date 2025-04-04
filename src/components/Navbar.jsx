@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"; 
-import { motion, AnimatePresence } from "framer-motion"; 
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 function Navbar({
@@ -13,6 +13,7 @@ function Navbar({
   const [isOpen, setIsOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState(null);
+  const scrollProgressRef = useRef(scrollProgress);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -36,13 +37,36 @@ function Navbar({
       const winHeight = window.innerHeight;
       const docHeight = document.body.scrollHeight;
       const total = (scrollTop / (docHeight - winHeight)) * 100;
-      setScrollProgress(total);
 
-      const sectionOffsets = navLinks.map(({ ref }) =>
-        ref.current ? ref.current.offsetTop : 0
-      );
+      if (Math.abs(scrollProgressRef.current - total) > 0.1) {
+        scrollProgressRef.current = total;
+        setScrollProgress(scrollProgressRef.current);
+      }
+    };
 
-      const scrollPosition = window.scrollY + winHeight / 2;
+    const smoothScroll = () => {
+      requestAnimationFrame(() => {
+        handleScroll();
+        smoothScroll();
+      });
+    };
+
+    smoothScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollProgress]);
+
+  useEffect(() => {
+    const sectionOffsets = navLinks.map(({ ref }) =>
+      ref.current ? ref.current.offsetTop : 0
+    );
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const winHeight = window.innerHeight;
+      const scrollPosition = scrollTop + winHeight / 2;
+
       const activeIndex = sectionOffsets.findIndex((offset, index) => {
         const nextOffset = sectionOffsets[index + 1] || Infinity;
         return scrollPosition >= offset && scrollPosition < nextOffset;
@@ -62,8 +86,11 @@ function Navbar({
   return (
     <>
       <div
-        className="fixed top-0 left-0 h-1 bg-gray-500 z-[60] transition-all duration-200"
-        style={{ width: `${scrollProgress}%` }}
+        className="fixed top-0 left-0 h-1 bg-gray-500 z-[60]"
+        style={{
+          width: `${scrollProgress}%`,
+          transition: "width 0.1s ease-out",
+        }}
       />
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
