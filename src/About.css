@@ -1,28 +1,16 @@
 .animated-gradient {
-  background: linear-gradient(135deg, #B0E2F9, #A0D3F2, #7BBFEA, #529FD6);
-  background-size: 300% 300%;
-  animation: gradientMove 12s ease infinite;
+  background: linear-gradient(90deg, #b0e2f9 0%, #a7d9f3 50%, #9fcee8 100%);
   position: relative;
-  border-radius: 0;           
-  overflow: hidden; 
-  -webkit-mask-image: none; 
+  border-radius: 0;
+  overflow: hidden;
+  -webkit-mask-image: none;
   mask-image: none;
 }
 
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 .wave-animation {
   animation: waveFloat 6s ease-in-out infinite;
 }
+
 @keyframes waveFloat {
   0% {
     transform: translateY(0);
@@ -34,15 +22,18 @@
     transform: translateY(0);
   }
 }
+
 .perspective-container {
   perspective: 1000px;
   transform-style: preserve-3d;
 }
+
 img.hover-optimized {
   image-rendering: auto;
   transform-style: preserve-3d;
   will-change: transform;
 }
+
 .svg-gradient-fill {
   fill: url(#animatedWaveGradient);
 }

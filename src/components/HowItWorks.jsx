@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faVolumeUp, faBookOpen, faUser, faHandsHelping } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVolumeUp, faBookOpen, faUser, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 import { motion } from "framer-motion";
 
 function HowItWorks({ howItWorksRef, scrollToSection, offerRef }) {
@@ -36,28 +36,38 @@ function HowItWorks({ howItWorksRef, scrollToSection, offerRef }) {
             viewport={{ once: true }}
         >
             <div className="parallax-background"></div>
-            <h2 className="text-5xl font-semibold mb-12 text-indigo-700 text-center">Jak wyglądają zajęcia?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <h2 className="text-5xl font-semibold mb-12 text-indigo-700 text-center">
+                Jak wyglądają zajęcia?
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 items-stretch auto-rows-fr">
                 {methods.map((method, i) => (
                     <motion.div
                         key={i}
-                        className="bg-gradient-to-r from-indigo-50 via-pink-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow"
+                        className="h-full flex flex-col justify-between bg-gradient-to-r from-indigo-50 via-pink-50 to-purple-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0 }}
                         whileHover={{
-                            scale: 1.05, 
-                            y: -6, 
+                            scale: 1.05,
+                            y: -6,
                             backgroundColor: "rgba(255, 255, 255, 0.9)",
                             boxShadow: "0 12px 30px rgba(0, 0, 0, 0.1)"
                         }}
                     >
-                        {method.icon}
-                        <h3 className="text-2xl font-bold mb-4 text-indigo-600">{method.title}</h3>
-                        <p className="text-gray-700 text-sm">{method.description}</p>
+                        <div className="mb-4">
+                            {method.icon}
+                            <h3 className="text-2xl font-bold text-indigo-600 min-h-[40px] mb-1">
+                              {method.title}
+                            </h3>
+                        </div>
+                        <div className="flex-1 flex items-start">
+                            <p className="text-gray-700 text-sm">{method.description}</p>
+                        </div>
                     </motion.div>
                 ))}
             </div>
+
             <div className="flex justify-center">
                 <motion.button
                     whileHover={{

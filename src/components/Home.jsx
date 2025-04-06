@@ -1,41 +1,28 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 function Home({ scrollToSection, aboutRef, contactRef }) {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-100 via-white to-pink-100 flex items-center justify-center px-4"
-    >
-      {/* Efekt paralaksy */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(99,102,241,0.1), transparent 80%)`,
-        }}
-      />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-100 via-white to-pink-100 px-4">
+      
+      <div className="bubbles-container">
+        <div className="bubble bubble1"></div>
+        <div className="bubble bubble2"></div>
+        <div className="bubble bubble3"></div>
+        <div className="bubble bubble4"></div>
+        <div className="bubble bubble5"></div>
+        <div className="bubble bubble6"></div>
+      </div>
 
-      <div className="z-10 max-w-5xl text-center flex flex-col items-center gap-10">
+      <div className="z-10 flex max-w-5xl flex-col items-center gap-10 text-center">
+        
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-indigo-700 leading-tight drop-shadow-lg"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-indigo-700 drop-shadow-lg"
         >
           Twój osobisty <br />
-          <span className="bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
             Trening Językowy
           </span>
         </motion.h1>
@@ -44,52 +31,69 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-gray-700 text-lg sm:text-xl max-w-2xl leading-relaxed"
+          className="max-w-2xl text-lg leading-relaxed text-gray-700 sm:text-xl"
         >
-          Prowadzę intensywne kursy językowe dla młodzieży szkół średnich i osób dorosłych, nastawione na praktyczne użycie języka w <strong>codziennych sytuacjach</strong>. 
-          Koncentrujemy się na rozwijaniu płynności w mówieniu, budowaniu dyscypliny w nauce oraz kształtowaniu nawyku systematycznej pracy. U nas liczy się rozmowa, zaangażowanie i realny postęp.
+          Prowadzę <strong>intensywne kursy językowe</strong> dla młodzieży szkół średnich i osób dorosłych, nastawione na praktyczne użycie języka w <strong>codziennych sytuacjach.</strong>
         </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="max-w-2xl text-lg leading-relaxed text-gray-700 sm:text-xl"
+        >
+          Koncentrujemy się na rozwijaniu płynności w mówieniu, budowaniu dyscypliny w nauce oraz kształtowaniu nawyku systematycznej pracy. U nas liczy się <strong>rozmowa, zaangażowanie i realny postęp.</strong>
+        </motion.p>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="rounded-xl border border-indigo-200 bg-white/80 px-4 py-3 text-sm text-gray-800 shadow-md backdrop-blur-sm sm:text-base"
+        >
+          Lekcja próbna bez żadnych opłat! 🎁
+        </motion.div>
 
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="bg-indigo-600 text-white px-6 py-3 rounded-2xl shadow-xl hover:brightness-110 transition text-base sm:text-lg"
+            className="mt-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition w-fit text-sm sm:text-base"
             onClick={() => scrollToSection(contactRef)}
           >
-            Zapisz się teraz ✍️
+            Zapisz się już teraz ✍️
           </motion.button>
+
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="border border-indigo-600 text-indigo-600 px-6 py-3 rounded-2xl shadow-sm hover:bg-indigo-50 transition text-base sm:text-lg"
+            className="mt-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition w-fit text-sm sm:text-base"
             onClick={() => scrollToSection(aboutRef)}
           >
             Poznaj mnie bliżej 🤝
           </motion.button>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="bg-white/80 border border-indigo-200 rounded-xl px-4 py-3 text-sm sm:text-base text-gray-800 shadow-md backdrop-blur-sm"
-        >
-          ❗ Pierwsza lekcja bez ryzyka: <strong>nie pasuje? Oddaję Ci pieniądze!</strong>
-        </motion.div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
+
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
         <svg
-          className="relative block w-[calc(100%+1.3px)] h-[100px]"
+          className="wave-animation relative block w-[calc(100%+1.3px)] h-[80px] sm:h-[100px]"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 100"
+          viewBox="0 0 1200 120"
           preserveAspectRatio="none"
         >
+          <defs>
+            <linearGradient id="aboutWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#b0e2f9" />
+              <stop offset="50%" stopColor="#a7d9f3" />
+              <stop offset="100%" stopColor="#9fcee8" />
+            </linearGradient>
+          </defs>
           <path
-            d="M0,0 C360,80 1080,0 1440,60 L1440,100 L0,100 Z"
-            fill="#7dd3fc"
+            d="M0,0 C300,100 900,0 1200,80 L1200,120 L0,120 Z"
+            fill="url(#aboutWaveGradient)"
           />
         </svg>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

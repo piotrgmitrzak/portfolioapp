@@ -7,23 +7,23 @@ function Offer({ offerRef, opinionsRef, scrollToSection }) {
         {
             title: "Indywidualne zajęcia",
             description: "Zajęcia 1:1 dostosowane w 100% do Twoich potrzeb. Mówienie, gramatyka i słownictwo w praktyce.",
-            price: "od 120 zł / 60 min",
+            price: "od 198 zł / 55 min",
             icon: (
                 <CheckCircle className="w-8 h-8 text-indigo-600" />
             )
         },
         {
-            title: "Zajęcia w parach",
-            description: "Świetna opcja dla znajomych, par lub współpracowników. Uczysz się i motywujesz razem.",
-            price: "od 80 zł / osoba / 60 min",
+            title: "Indywidualne zajęcia - Zniżka dla dwóch osób",
+            description: "Zapisz się razem ze znajomym, partnerem lub współpracownikiem. Każda osoba otrzyma zniżkę na indywidualne, 		spersonalizowane lekcje. Uczycie się osobno, ale motywujecie razem!",
+            price: "od 175 zł / osoba / 55 min",
             icon: (
                 <CheckCircle className="w-8 h-8 text-indigo-600" />
             )
         },
         {
-            title: "Kurs intensywny",
-            description: "Dla osób, które potrzebują szybkiego postępu. Idealny przed wyjazdem, egzaminem lub awansem.",
-            price: "od 100 zł / 60 min",
+            title: "Kurs dla firm",
+            description: "Przy grupie od 5 osób oferujemy atrakcyjne zniżki. Każdy uczestnik otrzymuje indywidualny, spersonalizowany kurs dostosowany do swoich potrzeb i celów.",
+            price: "Zadzwoń, aby poznać ofertę dopasowaną do Twojej firmy.",
             icon: (
                 <CheckCircle className="w-8 h-8 text-indigo-600" />
             )
