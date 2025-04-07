@@ -27,6 +27,7 @@ function MainPage() {
       behavior: "smooth",
     });
   };
+  
 
   return (
     <>
