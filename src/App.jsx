@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Analytics } from '@vercel/analytics/react';
+
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -46,6 +48,7 @@ function MainPage() {
     </>
   );
 }
+
 function App() {
   return (
     <BrowserRouter>
@@ -53,7 +56,9 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
+
 export default App;
