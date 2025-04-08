@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function Home({ scrollToSection, aboutRef, contactRef }) {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-100 via-white to-pink-100 px-4">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-100 via-white to-pink-100 px-4 py-20 sm:py-28">
       
       <div className="bubbles-container">
         <div className="bubble bubble1"></div>
@@ -13,13 +13,13 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
         <div className="bubble bubble6"></div>
       </div>
 
-      <div className="z-10 flex max-w-5xl flex-col items-center gap-10 text-center">
+      <div className="z-10 flex w-full max-w-5xl flex-col items-center gap-8 text-center">
         
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-indigo-700 drop-shadow-lg"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-indigo-700 drop-shadow-lg"
         >
           Twój osobisty <br />
           <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
@@ -31,7 +31,7 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="max-w-2xl text-lg leading-relaxed text-gray-700 sm:text-xl"
+          className="max-w-xl text-base leading-relaxed text-gray-700 sm:text-lg"
         >
           Prowadzę <strong>intensywne kursy językowe</strong> dla młodzieży szkół średnich i osób dorosłych, nastawione na praktyczne użycie języka w <strong>codziennych sytuacjach.</strong>
         </motion.p>
@@ -40,7 +40,7 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="max-w-2xl text-lg leading-relaxed text-gray-700 sm:text-xl"
+          className="max-w-xl text-base leading-relaxed text-gray-700 sm:text-lg"
         >
           Koncentrujemy się na rozwijaniu płynności w mówieniu, budowaniu dyscypliny w nauce oraz kształtowaniu nawyku systematycznej pracy. U nas liczy się <strong>rozmowa, zaangażowanie i realny postęp.</strong>
         </motion.p>
@@ -54,10 +54,10 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
           Lekcja próbna bez żadnych opłat! 🎁
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+        <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="mt-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition w-fit text-sm sm:text-base"
+            className="w-full sm:w-fit bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition text-sm sm:text-base"
             onClick={() => scrollToSection(contactRef)}
           >
             Zapisz się już teraz ✍️
@@ -65,7 +65,7 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
 
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="mt-4 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition w-fit text-sm sm:text-base"
+            className="w-full sm:w-fit bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition text-sm sm:text-base"
             onClick={() => scrollToSection(aboutRef)}
           >
             Poznaj mnie bliżej 🤝
