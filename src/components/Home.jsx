@@ -57,7 +57,7 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
         <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="w-full sm:w-fit bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition text-sm sm:text-base"
+            className="w-full max-w-xs sm:w-fit bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition text-sm sm:text-base"
             onClick={() => scrollToSection(contactRef)}
           >
             Zapisz się już teraz ✍️
@@ -65,7 +65,7 @@ function Home({ scrollToSection, aboutRef, contactRef }) {
 
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="w-full sm:w-fit bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition text-sm sm:text-base"
+            className="w-full max-w-xs sm:w-fit bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white px-5 py-2.5 rounded-2xl shadow-lg hover:brightness-110 transition text-sm sm:text-base"
             onClick={() => scrollToSection(aboutRef)}
           >
             Poznaj mnie bliżej 🤝
